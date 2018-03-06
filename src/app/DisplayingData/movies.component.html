@@ -12,26 +12,32 @@
         <th>Tagline</th>
         <th>Overview</th>
         <th>Revenue</th>
-        <th>Release Date</th>
+        <th>Release</th>
         <th>Rating</th>
-        <th>Imdb</th>
         <th>Image</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr *ngFor="let movie of movies; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{movie.id}}</td>
+        <td>
+          <a name="" href="{{movie.imdbId}}" target="_blank" role="button"> {{movie.title | uppercase}} </a>
+        </td>
+        <td>{{movie.tagline}}</td>
+        <td>{{movie.overview}}</td>
+        <td>{{movie.revenue | currency}}</td>
+        <td>{{movie.releaseDate | date:"MM/dd/yy" }}</td>
+        <td>{{movie.averageVote}}</td>
+
+        <td>
+          <!-- {{movie.posterUrl}} -->
+          <img src="{{movie.posterUrl}}" width="50" height="70" alt="">
+        </td>
+
+
       </tr>
-      
+
     </tbody>
   </table>
 </div>

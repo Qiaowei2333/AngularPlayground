@@ -6,7 +6,7 @@ export class Movie {
     posterUrl: string;
     revenue: number;
     imdbId: string;
-    releaseDate: Date;
+    releaseDate: string;
     averageVote: number;
     overview: string;
     tagline: string;
