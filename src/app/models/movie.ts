@@ -1,6 +1,6 @@
 import { genre } from "./genre";
 
-export class movie {
+export class Movie {
     id: number;
     title: string;
     posterUrl: string;
