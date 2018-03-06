@@ -25,7 +25,13 @@
           <a name="" href="{{movie.imdbId}}" target="_blank" role="button"> {{movie.title | capitalize}} </a>
         </td>
         <td>{{movie.tagline}}</td>
-        <td>{{movie.overview | summary}}</td>
+        <td>
+            <!-- <ng-template #tipContent>{{movie.overview}}</ng-template> -->
+
+          <span ngbTooltip="{{movie.overview}}" placement="left">
+            {{movie.overview | summary}}
+          </span>
+        </td>
         <td>{{movie.revenue | currency}}</td>
         <td>{{movie.releaseDate | date:"MM/dd/yy" }}</td>
         <td>
