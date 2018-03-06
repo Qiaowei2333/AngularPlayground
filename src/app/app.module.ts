@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { MoviesComponent } from './DisplayingData/movies.component';
 import { MovieService } from './Services/movie.service';
 import { GenreService } from './Services/genre.service';
+import { SummaryPipe } from './pipes/summary.pipe';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviesComponent
+    MoviesComponent,
+    SummaryPipe,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,

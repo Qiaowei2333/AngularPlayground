@@ -22,13 +22,17 @@
         <td>{{i+1}}</td>
         <td>{{movie.id}}</td>
         <td>
-          <a name="" href="{{movie.imdbId}}" target="_blank" role="button"> {{movie.title | uppercase}} </a>
+          <a name="" href="{{movie.imdbId}}" target="_blank" role="button"> {{movie.title | capitalize}} </a>
         </td>
         <td>{{movie.tagline}}</td>
-        <td>{{movie.overview}}</td>
+        <td>{{movie.overview | summary}}</td>
         <td>{{movie.revenue | currency}}</td>
         <td>{{movie.releaseDate | date:"MM/dd/yy" }}</td>
-        <td>{{movie.averageVote}}</td>
+        <td>
+          <span class="badge badge-pill" [ngClass]="{'badge-success': movie.averageVote > 8 ,'badge-warning': movie.averageVote < 6, 'badge-primary': movie.averageVote > 6 && movie.averageVote < 8 }">
+            {{movie.averageVote}}
+          </span>
+        </td>
 
         <td>
           <!-- {{movie.posterUrl}} -->
