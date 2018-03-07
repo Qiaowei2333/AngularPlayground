@@ -1,5 +1,5 @@
 <h3>
-  create-form works!
+  Create Form
 </h3>
 
 <!-- In the below code we have to manually check the enter key in component to get the value -->
@@ -14,21 +14,34 @@ Then Angular calls the event handler only when the user presses Enter.-->
 <!-- Template Variables used to get values from above text value -->
 <!-- A template reference variable is often a reference to a DOM element within a template. It can also be a reference to an Angular component or directive -->
 <!-- The scope of a reference variable is the entire template. Do not define the same variable name more than once in the same template. The runtime value will be unpredictable. -->
-<input type="text" #phone (keyup.enter)="onKeyUpGetValueFromTemplate(phone.value)">
-
+<!-- <input type="text" #phone (keyup.enter)="onKeyUpGetValueFromTemplate(phone.value)"> -->
+<!-- we use property binding for  -->
 <!-- two way binding ngModel -->
 <!-- <input type="text" [value]="bookname" (keyup.enter)="onKeyUpGetPropertyValue(bookname)"> -->
 <br>
 <br>
 <br>
 <br>
-<br>
 <!-- with value property we only get initial vaue and not updated value  because property binding is one way from Component to View not other way -->
 
+<!-- We use property binding with Square brackets syntax to bind properties of DOM objects, in other words source property is input to that DOM object
+we use this to supply data to this object   -->
+<!-- Example
+ <img [src] = "imageUrl" / >
+-->
+
+<!-- We use event binding to respond to the event raised from DOM object, like (click) -->
+<!-- <button (click)="onClick()"> </button> -->
 
 <!-- banan in a box syntax, ngModel will be in different module formsModule , make sure to import in AppModule -->
-<!-- <input type="text" [(ngModel)]="bookname" (keyup.enter)="onKeyUpTwoWayBinding(bookname)"> -->
+<input type="text" [(ngModel)]="bookname" (keyup.enter)="onKeyUpTwoWayBinding(bookname)">
 
 <h4>
   {{bookname}}
 </h4>
+
+<!-- 
+
+  components do need to exchange data. In Angular 2, a component can receive data from its parent as long as the receiving component has specifically said it is willing to receive data.
+   Similarly, components can send data to their parents by trigger an event the parent listens for. 
+ -->

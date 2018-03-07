@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateFormComponent implements OnInit {
 
-  bookname = "initial value";
+  bookname = "Hunger Games";
   constructor() { }
 
   ngOnInit() {

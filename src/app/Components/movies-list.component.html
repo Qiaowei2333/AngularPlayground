@@ -1,0 +1,32 @@
+<h3>
+  List of Movies
+</h3>
+
+<div class="container">
+  <table class="table table-sm">
+    <thead>
+      <tr>
+
+        <th>Title</th>
+        <th>Rating</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies; let i=index">
+
+        <td>
+          <a name="" src="" href="" target="_blank" role="button"> {{movie.title | capitalize}} </a>
+        </td>
+
+        <td>
+          <span class="badge badge-pill" [ngClass]="{'badge-success': movie.averageVote > 8 ,'badge-warning': movie.averageVote < 6, 'badge-primary': movie.averageVote > 6 && movie.averageVote < 8 }">
+            {{movie.averageVote}}
+          </span>
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
