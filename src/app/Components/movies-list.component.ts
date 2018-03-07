@@ -10,13 +10,19 @@ import { MovieService } from '../Services/movie.service';
 export class MoviesListComponent {
 
   movies: Movie[];
+  selectedMovie: Movie;
   constructor(private movieService: MovieService) {
     this.movieService.getAllMovies('/movies')
       .subscribe(
         m => {
-          this.movies = m;
+          this.movies = m.slice(1, 5);
         }
       )
+  }
+
+  onSelect(movie: Movie): void {
+    this.selectedMovie = movie;
+    console.log(this.selectedMovie.overview);
   }
 
 }

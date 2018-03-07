@@ -16,7 +16,7 @@
       <tr *ngFor="let movie of movies; let i=index">
 
         <td>
-          <a name="" src="" href="" target="_blank" role="button"> {{movie.title | capitalize}} </a>
+          <button class="btn" (click)="onSelect(movie)"> {{movie.title | capitalize}} </button>
         </td>
 
         <td>
@@ -29,4 +29,10 @@
 
     </tbody>
   </table>
+
+
+</div>
+
+<div>
+  <app-movie-detail [movie]="selectedMovie" ></app-movie-detail>
 </div>

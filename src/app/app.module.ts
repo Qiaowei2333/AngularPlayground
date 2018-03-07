@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovieFormComponent } from './TemplateForms/movie-form.component';
 import { CreateFormComponent } from './HandlingEvents/create-form.component';
 import { MoviesListComponent } from './components/movies-list.component';
+import { MovieDetailComponent } from './components/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MoviesListComponent } from './components/movies-list.component';
     CapitalizePipe,
     MovieFormComponent,
     CreateFormComponent,
-    MoviesListComponent
+    MoviesListComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
