@@ -12,13 +12,15 @@ import { SummaryPipe } from './pipes/summary.pipe';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CreateMovieComponent } from './HandlingEvents/create-movie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesComponent,
     SummaryPipe,
-    CapitalizePipe
+    CapitalizePipe,
+    CreateMovieComponent
   ],
   imports: [
     BrowserModule,

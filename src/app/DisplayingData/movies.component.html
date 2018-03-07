@@ -26,9 +26,9 @@
         </td>
         <td>{{movie.tagline}}</td>
         <td>
-            <!-- <ng-template #tipContent>{{movie.overview}}</ng-template> -->
+          <!-- <ng-template #tipContent>{{movie.overview}}</ng-template> -->
 
-          <span ngbTooltip="{{movie.overview}}"  placement="left">
+          <span ngbTooltip="{{movie.overview}}" placement="left">
             {{movie.overview | summary}}
           </span>
         </td>
@@ -39,13 +39,9 @@
             {{movie.averageVote}}
           </span>
         </td>
-
         <td>
-          <!-- {{movie.posterUrl}} -->
-          <img src="{{movie.posterUrl}}" width="50" height="70" alt="">
+            <img src="{{movie.posterUrl}}" width="50" height="70" alt="">
         </td>
-
-
       </tr>
 
     </tbody>
