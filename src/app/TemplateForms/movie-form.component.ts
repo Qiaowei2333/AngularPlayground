@@ -35,7 +35,9 @@ export class MovieFormComponent implements OnInit {
   onClick() {
     console.log('DIV Clicked')
   }
-
+  logControl(name) {
+    console.log(name);
+  }
   saveMovie(movie: Movie) {
     this.movie = movie;
     console.log(this.movie);
