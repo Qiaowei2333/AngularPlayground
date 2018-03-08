@@ -1,45 +1,83 @@
 <h2>
-    Create Movie
-  </h2>
-  <form class="container">
-    <div (click)="onClick()">
-      <div class="form-group">
-        <label for="title">Movie</label>
-        <input type="text" class="form-control" id="title" placeholder="Movie">
-      </div>
-      <div class="form-group">
-        <label for="tagline">Tagline</label>
-        <input type="text" class="form-control" id="tagline" placeholder="Tagline">
-      </div>
-      <div class="form-group">
-        <label for="budget">Budget</label>
-        <input type="text" class="form-control" id="budget" placeholder="Budget">
-      </div>
-      <div class="form-group">
-        <label for="revenue">Revenue</label>
-        <input type="text" class="form-control" id="revenue" placeholder="Revenue">
-      </div>
-      <div class="form-group">
-        <label for="poster">Poster</label>
-        <input type="text" class="form-control" id="poster" placeholder="Poster url">
-      </div>
-      <div class="form-group">
-        <label for="releaseDate">Release Date</label>
-        <input type="text" class="form-control" id="releaseDate" placeholder="Release date">
-      </div>
-      <div class="form-group">
-        <label for="averageVote">Average Vote</label>
-        <input type="text" class="form-control" id="averageVote" placeholder="Average vote">
-      </div>
-      <div class="form-group">
-        <label for="overview">Overview</label>
-        <input type="text" class="form-control" id="overview" placeholder="overview">
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <input name="" id="" class="btn btn-primary" (click)="onSave($event)" type="submit" value="Save Movie">
+  Create Movie
+ 
+</h2>
+
+<div>
+    {{diagnostic}}
+</div>
+<br><br><br>
+<form class="container" #movieForm="ngForm" (ngSubmit)="saveMovie(movieForm.value)">
+  <div>
+    <div class="form-group">
+      <label for="title">Movie</label>
+      <input type="text" name="title" [(ngModel)]="movie.title" class="form-control" id="title" placeholder="title">
     </div>
-  </form>
-  
+
+    <div class="form-group">
+      <label for="tagline">Tagline</label>
+      <input type="text" class="form-control" name="tagline" [(ngModel)]="movie.tagline" id="tagline" placeholder="Tagline">
+    </div>
+    <div class="form-group">
+      <label for="budget">Budget</label>
+      <input type="text" class="form-control" id="budget" placeholder="Budget">
+    </div>
+    <div class="form-group">
+      <label for="revenue">Revenue</label>
+      <input type="text" class="form-control" id="revenue" placeholder="Revenue">
+    </div>
+    <div class="form-group">
+      <label for="poster">Poster</label>
+      <input type="text" class="form-control" id="poster" placeholder="Poster url">
+    </div>
+    <div class="form-group">
+      <label for="releaseDate">Release Date</label>
+      <input type="text" class="form-control" id="releaseDate" placeholder="Release date">
+    </div>
+    <div class="form-group">
+      <label for="averageVote">Average Vote</label>
+      <input type="text" class="form-control" id="averageVote" placeholder="Average vote">
+    </div>
+    <div class="form-group">
+      <label for="overview">Overview</label>
+      <input type="text" class="form-control" id="overview" placeholder="overview">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">
+      Save Movie
+    </button>
+  </div>
+</form>
+
+
+<!-- when applied ngModel attribute directive on input field, angular create a control object and associates that input field under the hood
+ important name attribute should be set for ngModel for it to work
+-->
+
+<!-- In order to register form controls on an ngForm instance, we use the ngModel directive. In combination with a name attribute, ngModel creates a form control abstraction 
+for us behind the scenes. Every form control that is registered with ngModel will automatically show up in form.value and can then easily be used for further post processing -->
+
+<!-- ngModelGroup enables us to semantically group our form controls. In other words, there can’t be a control group without controls.
+ In addition to that, it also tracks validity state of the inner form controls. This comes in very handy if we want to check the validity state of just a sub set of the form. -->
+
+<!-- (change)="logControl(bookTitle)" -->
+<!-- (click)="onSave(desc.value)" -->
+<!-- (click)="onSave(bookForm)" -->
+
+<!-- [disabled]="!bookForm.form.valid"  -->
+
+<!-- State	                      Class if true	      Class if false
+The control has been visited.	    ng-touched	        ng-untouched
+The control's value has changed.	ng-dirty	          ng-pristine
+The control's value is valid.	    ng-valid	          ng-invalid -->
+
+<!-- form-controll class will helps us Validation -->
+<!-- form-group represents a group of controls in a form -->
+
+<!-- Angular by default applies  a directive called ngForm -->
+<!-- Lets create a template variable to get the reference of the form  -->
+
+<!-- ngSubmit ensures that the form doesn’t submit when the handler code throws (which is the default behaviour of submit) and causes an actual http post request. -->

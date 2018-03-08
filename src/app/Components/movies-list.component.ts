@@ -7,11 +7,15 @@ import { MovieService } from '../Services/movie.service';
   templateUrl: './movies-list.component.html',
   styleUrls: ['./movies-list.component.css']
 })
-export class MoviesListComponent {
+export class MoviesListComponent implements OnInit {
+
 
   movies: Movie[];
   selectedMovie: Movie;
   constructor(private movieService: MovieService) {
+
+  }
+  ngOnInit(): void {
     this.movieService.getAllMovies('/movies')
       .subscribe(
         m => {
@@ -19,7 +23,6 @@ export class MoviesListComponent {
         }
       )
   }
-
   onSelect(movie: Movie): void {
     this.selectedMovie = movie;
     console.log(this.selectedMovie.overview);

@@ -7,9 +7,14 @@ import { MovieService } from '../Services/movie.service';
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })
-export class MoviesComponent {
+export class MoviesComponent implements OnInit {
+
   movies: Movie[];
   constructor(private movieService: MovieService) {
+
+  }
+
+  ngOnInit(): void {
     this.movieService.getAllMovies('/movies')
       .subscribe(
         m => {

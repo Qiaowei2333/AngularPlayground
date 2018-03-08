@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from '../models/movie';
 
 @Component({
   selector: 'app-movie-form',
@@ -6,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-form.component.css']
 })
 export class MovieFormComponent implements OnInit {
+
+  movie: Movie = {
+    id: 0,
+    title: '',
+    posterUrl: '',
+    revenue: 0,
+    imdbId: '',
+    releaseDate: '',
+    averageVote: 0,
+    overview: '',
+    tagline: '',
+    genres: []
+  };
 
   constructor() { }
 
@@ -15,11 +29,19 @@ export class MovieFormComponent implements OnInit {
     console.log('save clicked!');
     console.log(x);
     x.stopPropagation();
-   // will stop event bubbling going up DOM tree
+    // will stop event bubbling going up DOM tree
 
   }
-  onClick()
-  {
+  onClick() {
     console.log('DIV Clicked')
   }
+
+  saveMovie(movie: Movie) {
+    this.movie = movie;
+    console.log(this.movie);
+    console.log('Save Movie to Database by calling POST');
+  }
+
+  // TODO: Remove this when we're done
+  get diagnostic() { return JSON.stringify(this.movie); }
 }
