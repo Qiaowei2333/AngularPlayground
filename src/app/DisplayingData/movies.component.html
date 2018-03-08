@@ -2,8 +2,16 @@
   List of Movies
 </h3>
 
+<p>
+  <ngb-progressbar [hidden]="!loading" type="info" [value]="55" [striped]="true" [animated]="true">
+    <i>Loading...</i>
+  </ngb-progressbar>
+</p>
+
+
+<!-- <div [hidden]="!loading"> Loading Movies... </div> -->
 <div class="container-responsive">
-  <table class="table table-bordered">
+  <table class="table table-bordered" *ngIf="movies && movies.length">
     <thead>
       <tr>
         <th>#</th>
@@ -38,9 +46,21 @@
           <span class="badge badge-pill" [ngClass]="{'badge-success': movie.averageVote > 8 ,'badge-warning': movie.averageVote < 6, 'badge-primary': movie.averageVote > 6 && movie.averageVote < 8 }">
             {{movie.averageVote}}
           </span>
+
+          <ng-template #t let-fill="fill">
+            <span *ngIf="fill === 100" class="star full">&#9733;</span>
+            <span *ngIf="fill === 0" class="star">&#9733;</span>
+            <span *ngIf="fill < 100 && fill > 0" class="star">
+              <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+            </span>
+          </ng-template>
+
+
+          <ngb-rating [(rate)]="movie.averageVote" [starTemplate]="t" [readonly]="true" max="10"></ngb-rating>
+
         </td>
         <td>
-            <img src="{{movie.posterUrl}}" width="50" height="70" alt="">
+          <img src="{{movie.posterUrl}}" width="50" height="70" alt="">
         </td>
       </tr>
 

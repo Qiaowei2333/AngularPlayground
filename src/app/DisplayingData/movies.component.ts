@@ -10,17 +10,21 @@ import { MovieService } from '../Services/movie.service';
 export class MoviesComponent implements OnInit {
 
   movies: Movie[];
+  loading = false;
+
   constructor(private movieService: MovieService) {
 
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.movieService.getAllMovies('/movies')
       .subscribe(
         m => {
+          this.loading = false;
           this.movies = m;
-          console.log('movies api called');
-          console.table(this.movies);
+          // console.log('movies api called');
+          // console.table(this.movies);
         }
       )
   }

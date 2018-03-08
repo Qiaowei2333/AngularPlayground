@@ -15,7 +15,7 @@
       <label for="title">Movie</label>
       <input type="text" name="title" (change)="logControl(title)" minlength="3" maxlength="50" #title="ngModel" [(ngModel)]="movie.title" class="form-control" id="title"
         placeholder="title" required>
-      <div class="alert alert-danger" *ngIf="title.touched && !title.valid">
+      <div class="alert alert-danger" *ngIf="title.invalid && (title.dirty || title.touched)">
         <div *ngIf="title.errors.required">
           Title is required
         </div>
