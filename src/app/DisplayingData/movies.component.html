@@ -1,13 +1,13 @@
+<ng-progress  [speed]="200" [ease]="'linear'" [meteor]="true"
+              [spinner]="false" [spinnerPosition]="'right'" [direction]="'rightToLeftIncreased'"
+              [color]="'red'" [trickleSpeed]="250" [thick]="false"
+></ng-progress>
+
+
+
 <h3>
   List of Movies
 </h3>
-
-<p>
-  <ngb-progressbar [hidden]="!loading" type="info" [value]="55" [striped]="true" [animated]="true">
-    <i>Loading...</i>
-  </ngb-progressbar>
-</p>
-
 
 <!-- <div [hidden]="!loading"> Loading Movies... </div> -->
 <div class="container-responsive">
@@ -40,7 +40,7 @@
             {{movie.overview | summary}}
           </span>
         </td>
-        <td>{{movie.revenue | currency:'GBP' }}</td>
+        <td>{{movie.revenue | currency }}</td>
         <td>{{movie.releaseDate | date:'fullDate' }}</td>
         <td>
           <span class="badge badge-pill" [ngClass]="{'badge-success': movie.averageVote > 8 ,'badge-warning': movie.averageVote < 6, 'badge-primary': movie.averageVote > 6 && movie.averageVote < 8 }">

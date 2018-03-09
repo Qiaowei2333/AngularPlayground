@@ -6,15 +6,15 @@
   .star {
     position: relative;  
     display: inline-block;
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: #d3d3d3;
   }
   .full {
-    color: red;
+    color: goldenrod;
   }
   .half {
     position: absolute;
     display: inline-block;
     overflow: hidden;
-    color: red;
+    color: goldenrod;
   }
