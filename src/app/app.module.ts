@@ -14,7 +14,6 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgProgressModule } from '@ngx-progressbar/core';
 
-
 import { MovieFormComponent } from './TemplateForms/movie-form.component';
 import { CreateFormComponent } from './HandlingEvents/create-form.component';
 import { MoviesListComponent } from './components/movies-list.component';
