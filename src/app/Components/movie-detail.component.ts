@@ -8,15 +8,12 @@ import { Movie } from '../models/movie';
 })
 export class MovieDetailComponent implements OnInit {
   @Input() movie: Movie;
-  @Output() movieEdited = new EventEmitter<Movie>();
-  // @Output() onVoted = new EventEmitter<boolean>();
+
+  @Out movieEdited;
 
   constructor() { }
 
   ngOnInit() {
   }
-  onMovieClick() {
 
-    this.movieEdited.emit(this.movie);
-  }
 }
