@@ -9,11 +9,13 @@ import { Movie } from '../models/movie';
 export class MovieDetailComponent implements OnInit {
   @Input() movie: Movie;
 
-  @Out movieEdited;
+  @Output() movieEdited =  new EventEmitter<Movie>();
 
   constructor() { }
 
   ngOnInit() {
   }
-
+  onMovieClick() {
+    this.movieEdited.emit(this.movie);
+  }
 }
