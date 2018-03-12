@@ -25,7 +25,12 @@ export class MoviesListComponent implements OnInit {
   }
   onSelect(movie: Movie): void {
     this.selectedMovie = movie;
-    console.log(this.selectedMovie.overview);
+    // console.log(this.selectedMovie.overview);
+  }
+  onMovieEdited(movie: Movie) {
+    // call the service to save updated movie
+    console.log(movie);
+    console.log('Child component edited movie!');
   }
 
 }

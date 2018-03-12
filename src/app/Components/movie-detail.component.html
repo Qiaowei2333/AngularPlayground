@@ -6,9 +6,11 @@
   <div>
     <span>id: </span>{{movie.id}}</div>
   <div>
-    <label>name:
+    <label>Overview:
       <input [(ngModel)]="movie.overview" placeholder="overview" />
     </label>
   </div>
-
+  <div>
+    <button type="button" class="btn btn-primary" (click)="onMovieClick()">Edit Movie</button>
+  </div>
 </div>

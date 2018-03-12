@@ -34,5 +34,5 @@
 </div>
 
 <div>
-  <app-movie-detail [movie]="selectedMovie" ></app-movie-detail>
+  <app-movie-detail [movie]="selectedMovie" (movieEdited) = "onMovieEdited($event)" ></app-movie-detail>
 </div>
