@@ -11,9 +11,9 @@ import { NgProgress } from '@ngx-progressbar/core';
 export class MoviesComponent implements OnInit {
 
   movies: Movie[];
-  loading = false;
+  loading = true;
 
-  constructor(private movieService: MovieService, public progress: NgProgress) {
+  constructor(private movieService: MovieService) {
 
   }
 
@@ -22,6 +22,7 @@ export class MoviesComponent implements OnInit {
     this.movieService.getAllMovies('/movies')
       .subscribe(
         m => {
+          this.loading = false;
           this.movies = m;
         }
       )
