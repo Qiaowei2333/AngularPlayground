@@ -34,8 +34,8 @@
             {{movie.overview | summary}}
           </span>
         </td>
-        <td>{{movie.revenue | currency }}</td>
-        <td>{{movie.releaseDate | date:'fullDate' }}</td>
+        <td>{{movie.revenue | currency:'EUR' }}</td>
+        <td>{{movie.releaseDate | date:'short' }}</td>
         <td>
           <span class="badge badge-pill" [ngClass]="{'badge-success': movie.averageVote > 8 ,'badge-warning': movie.averageVote < 6, 'badge-primary': movie.averageVote > 6 && movie.averageVote < 8 }">
             {{movie.averageVote}}
