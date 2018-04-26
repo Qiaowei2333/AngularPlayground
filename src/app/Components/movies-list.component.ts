@@ -24,13 +24,13 @@ export class MoviesListComponent implements OnInit {
   //     this.progress.completed();
   // }, 2000);
 
-    this.movieService.getAllMovies('/movies')
+    this.movieService.getAllMovies('/movies/')
       .subscribe(
         m => {
           this.movies = m.slice(1, 5);
           this.progress.complete();
         }
-      )
+      );
   }
   onSelect(movie: Movie): void {
     this.selectedMovie = movie;
