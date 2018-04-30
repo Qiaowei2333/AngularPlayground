@@ -33,7 +33,7 @@ export class MovieFormComponent implements OnInit {
 
   }
   onClick() {
-    console.log('DIV Clicked')
+    console.log('DIV Clicked');
   }
   logControl(name) {
     console.log(name);

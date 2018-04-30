@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { MoviesComponent } from './DisplayingData/movies.component';
@@ -18,6 +19,9 @@ import { MovieFormComponent } from './TemplateForms/movie-form.component';
 import { CreateFormComponent } from './HandlingEvents/create-form.component';
 import { MoviesListComponent } from './components/movies-list.component';
 import { MovieDetailComponent } from './components/movie-detail.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { MovieDetailComponent } from './components/movie-detail.component';
     MovieFormComponent,
     CreateFormComponent,
     MoviesListComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    HomeComponent,
+    LoginComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,15 @@ import { MovieDetailComponent } from './components/movie-detail.component';
     HttpClientModule,
     HttpModule,
     NgProgressModule.forRoot(),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'movies', component: MoviesComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'movie/:id', component: MovieDetailComponent },
+      { path: 'movie/new', component: MovieFormComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
   ],
   providers: [MovieService, GenreService],
   bootstrap: [AppComponent]
