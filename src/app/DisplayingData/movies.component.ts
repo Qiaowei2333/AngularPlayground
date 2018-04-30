@@ -25,7 +25,7 @@ export class MoviesComponent implements OnInit {
           this.loading = false;
           this.movies = m;
         }
-      )
+      );
   }
 
 
