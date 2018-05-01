@@ -24,6 +24,7 @@ export class MovieFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('Form called');
   }
   onSave(x) {
     console.log('save clicked!');

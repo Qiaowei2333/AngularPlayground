@@ -22,6 +22,9 @@ import { MovieDetailComponent } from './components/movie-detail.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HeaderComponent } from './header/header.component';
+import { GenresComponent } from './genres/genres.component';
+import { GenreFormComponent } from './genres/genre-form.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MovieDetailComponent,
     HomeComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    HeaderComponent,
+    GenresComponent,
+    GenreFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,9 +53,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'movies', component: MoviesComponent },
+      { path: 'genres', component: GenresComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'movie/:id', component: MovieDetailComponent },
+      { path: 'genre/new', component: GenreFormComponent },
       { path: 'movie/new', component: MovieFormComponent },
+      { path: 'movie/:id', component: MovieDetailComponent },
+      { path: 'genre/:id', component: MoviesComponent },
       { path: '**', component: NotFoundComponent }
     ])
   ],
