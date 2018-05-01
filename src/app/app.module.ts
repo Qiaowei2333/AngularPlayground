@@ -25,6 +25,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { HeaderComponent } from './header/header.component';
 import { GenresComponent } from './genres/genres.component';
 import { GenreFormComponent } from './genres/genre-form.component';
+import { CreateMovieComponent } from './movies/create-movie.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { GenreFormComponent } from './genres/genre-form.component';
     HeaderComponent,
     GenresComponent,
     GenreFormComponent,
+    CreateMovieComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,7 @@ import { GenreFormComponent } from './genres/genre-form.component';
       { path: 'genres', component: GenresComponent },
       { path: 'login', component: LoginComponent },
       { path: 'genre/new', component: GenreFormComponent },
-      { path: 'movie/new', component: MovieFormComponent },
+      { path: 'movie/new', component: CreateMovieComponent },
       { path: 'movie/:id', component: MovieDetailComponent },
       { path: 'genre/:id', component: MoviesComponent },
       { path: '**', component: NotFoundComponent }

@@ -1,17 +1,17 @@
-<nav class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 mb-3 navbar navbar-expand-lg navbar-dark bg-primary border-bottom box-shadow">
+<nav class="d-flex flex-column flex-md-row align-items-center p-2 px-md-4 mb-3 navbar navbar-expand-lg navbar-dark bg-primary">
   <h4 class="my-0 mr-md-auto">
     <a class="navbar-brand font-weight-bold" href="#">Movie Store</a>
   </h4>
   <nav class="my-2 my-md-0 mr-md-3">
     <ul class="navbar-nav mr-auto">
       <li>
-        <a [routerLink]="['/movies']" class="nav-link">Movies</a>
+        <a [routerLink]="['/movies']" class="nav-link" routerLinkActive="active">Movies</a>
       </li>
       <li>
         <a [routerLink]="['/movie/new']" class="nav-link" routerLinkActive="active">Create New Movie</a>
       </li>
       <li>
-        <!-- <a [routerLink]="['/movies/:id']" class="nav-link" routerLinkActive="nav-link-active" href="#">Interviews</a> -->
+        <a [routerLink]="['/genres']" class="nav-link" routerLinkActive="active" href="#">Genres</a>
       </li>
       <li>
         <!-- <a [routerLink]="['/clients']" class="nav-link" routerLinkActive="nav-link-active" href="#">Clients</a> -->
@@ -19,5 +19,5 @@
     </ul>
 
   </nav>
-  <a class="btn btn-outline-success" [routerLink]="['/login']" >Login</a>
+  <a class="btn btn-outline-light" [routerLink]="['/login']" >Login</a>
 </nav>
