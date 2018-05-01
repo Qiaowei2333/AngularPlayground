@@ -3,6 +3,47 @@
     Create Movie
   </h3>
   <div>
+    <!-- In the below code we have to manually check the enter key in component to get the value -->
 
+    <div class="form-group">
+      <label for="movieInput">Movie Title</label>
+
+      <!-- 1 -->
+      <!-- In the below code we have to manually check the enter key in component to get the value -->
+      <!-- <input type="text" class="form-control" (keyup)="onKeyUp($event)" id="movieInput" placeholder="Enter Movie Title"> -->
+
+
+      <!-- 2 Here we use Angular event filtering for better solution, keyup.enter pseudo-event. Then Angular calls the event handler only when the user presses Enter -->
+      <!-- <input type="text" class="form-control" (keyup.enter)="onKeyUpEnter($event)" id="movieInput" placeholder="Enter Movie Title"> -->
+
+
+      <!-- 3 -->
+      <!-- Template Variables used to get values from below text value -->
+      <!-- A template reference variable is often a reference to a DOM element within a template. It can also be a reference to an Angular component or directive -->
+      <!-- The scope of a reference variable is the entire template. Do not define the same variable name more than once in the same template. The runtime value will be unpredictable. -->
+      <!-- <input type="text" name="movie" class="form-control" #movie (keyup.enter)="onKeyUpGetValueFromTemplate(movie.value)"> -->
+
+      <!-- 4 -->
+      <!-- property binding is one way, so no updated value -->
+      <!-- with value property we only get initial vaue and not updated value  because property binding is one way from Component to View not other way -->
+      <!-- We use property binding with Square brackets syntax to bind properties of DOM objects, in other words source property is input to that DOM object we use this to supply data to this object   -->
+      <!-- <input type="text" class="form-control" [value]="movieName" (keyup.enter)="onKeyUpGetPropertyValue(movieName)"> -->
+
+      <!-- 5 -->
+      <!-- banan in a box syntax, ngModel will be in different module formsModule , make sure to import in AppModule -->
+      <input type="text" class="form-control" [(ngModel)]="movieName" (keyup.enter)="onKeyUpTwoWayBinding(movieName)">
+
+      <h6 class="mt-3">
+        {{movieName}}
+      </h6>
+
+      <!-- 6 -->
+      <!-- We use event binding to respond to the event raised from DOM object, like (click) -->
+      <button class="btn btn-primary" class=" btn btn-primary mt-5" (click)="onClick()"> Click Here </button>
+     
+      <!-- components do need to exchange data. In Angular 2, a component can receive data from its parent as long as the receiving component has specifically said it is
+         willing to receive data. Similarly, components can send data to their parents by trigger an event the parent listens for.  -->
+
+    </div>
   </div>
 </div>
