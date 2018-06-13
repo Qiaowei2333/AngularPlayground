@@ -26,6 +26,7 @@ import { HeaderComponent } from './header/header.component';
 import { GenresComponent } from './genres/genres.component';
 import { GenreFormComponent } from './genres/genre-form.component';
 import { CreateMovieComponent } from './movies/create-movie.component';
+import { HelloRxComponent } from './HelloRxJS/hello-rx.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CreateMovieComponent } from './movies/create-movie.component';
     GenresComponent,
     GenreFormComponent,
     CreateMovieComponent,
+    HelloRxComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +63,7 @@ import { CreateMovieComponent } from './movies/create-movie.component';
       { path: 'movie/new', component: CreateMovieComponent },
       { path: 'movie/:id', component: MovieDetailComponent },
       { path: 'genre/:id', component: MoviesComponent },
+      { path: 'rx', component: HelloRxComponent },
       { path: '**', component: NotFoundComponent }
     ])
   ],

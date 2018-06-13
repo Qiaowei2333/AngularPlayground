@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateFormComponent implements OnInit {
 
-  bookname = "Hunger Games";
+  bookname = 'Hunger Games';
   constructor() { }
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class CreateFormComponent implements OnInit {
       console.log('Enter was Pressed!');
       console.log($event.target.value);
     }
-    //we can use target.value to get the value
+    // we can use target.value to get the value
     // console.log($event.target.value);
   }
 
