@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, fromEvent } from 'rxjs';
+import { Observable, fromEvent, timer, from, zip, interval } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -22,26 +22,9 @@ export class HelloRxComponent implements OnInit {
     // const squaredNums = squareValues(nums);
     // squaredNums.subscribe(x => console.log(x));
 
-
-    const el = document.getElementById('btnp');
-
-    // Create an Observable that will publish mouse movements
-    const mouseMoves = fromEvent(el, 'dblclick');
-
-    // Subscribe to start listening for mouse-move events
-    const subscription = mouseMoves.subscribe((evt: MouseEvent) => {
-      // Log coords of mouse movements
-      console.log(`Coords: ${evt.clientX} X ${evt.clientY}`);
-
-      // When the mouse is over the upper-left of the screen,
-      // unsubscribe to stop listening for mouse movements
-      if (evt.clientX < 40 && evt.clientY < 40) {
-        subscription.unsubscribe();
-      }
-    });
-
-
-
+    const arraySource = from([10, 20, 30, 40, 50]);
+    const int = interval(200);
+    const example = zip(arraySource, int);
+    example.subscribe((val: Array<number>) => console.log(val[0] * 2));
   }
-
 }
